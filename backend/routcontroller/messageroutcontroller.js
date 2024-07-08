@@ -4,6 +4,7 @@ const { populate } = require("dotenv");
 const { Conversation } = require("../Models/conversationModels.js");
 const { Message } = require("../Models/messageModels.js");
 const {User}=require("../Models/userModels.js")
+const { getReceiverSocketId, io } =require( "../Socket/socket.js");
 
 
 const sendMessage = async (req, res) => {

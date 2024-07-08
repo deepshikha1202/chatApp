@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { IoArrowBackSharp } from 'react-icons/io5'
 import { BiLogOut } from "react-icons/bi";
 import userConversation from '../../Zustan/userConversation';
-import { useSocketContext } from '../../context/SocketContext';
+import { useSocketContext } from '../../context/SocketContext.jsx';
 
 const Sidebar = ({ onSelectUser }) => {
 
@@ -31,7 +31,7 @@ const Sidebar = ({ onSelectUser }) => {
         const chatUserHandler = async () => {
             setLoading(true)
             try {
-                const chatters = await axios.get(`/api/user/currentchatters`)
+                const chatters = await axios.get(`/api/user/chatters`)
                 const data = chatters.data;
                 if (data.success === false) {
                     setLoading(false)
